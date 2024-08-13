@@ -1,0 +1,42 @@
+/* src/components/HeroSection.css */
+.hero-section {
+  background-image: url('https://img.freepik.com/free-vector/low-poly-style-zero-one-binary-digit-tech-background_1017-52413.jpg?w=1060&t=st=1723143427~exp=1723144027~hmac=a87d37b66d1aeab6ca7a00d8c1c11cd5e97ef8b65702bdc3f298bf8eb4bf7689');
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.cta-button:hover {
+  background-color: #2980b9;
+}

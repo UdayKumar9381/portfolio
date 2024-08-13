@@ -1,0 +1,39 @@
+.cursor-effect {
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .star {
+    position: absolute;
+    background-color: rgba(200, 114, 168, 0.8);
+    transform: translate(-50%, -50%) rotate(45deg);
+    clip-path: polygon(
+      50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%
+    );
+    animation: star 3s ease-out forwards;
+  }
+  
+  @keyframes star {
+    from {
+      transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(45deg) scale(0);
+      opacity: 0;
+    }
+  }
+  
