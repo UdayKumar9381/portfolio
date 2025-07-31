@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Confetti from "react-confetti";
@@ -7,6 +7,10 @@ const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [showConfetti, setShowConfetti] = useState(false);
   const [thankYouVisible, setThankYouVisible] = useState(false);
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -35,13 +39,15 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a1a2f] text-white px-6 py-12">
+    <div className="min-h-screen bg-[#0a1a2f] text-white px-4 sm:px-6 py-12">
       {showConfetti && <Confetti />}
-      <h2 className="text-4xl font-bold text-cyan-400 text-center mb-8">📬 Contact Me</h2>
+      <h2 className="text-3xl sm:text-4xl font-bold text-cyan-400 text-center mb-8">
+        📬 Contact Me
+      </h2>
 
       <form
         onSubmit={handleSubmit}
-        className="max-w-xl mx-auto bg-[#0f2437] p-8 rounded-xl shadow-lg border border-cyan-600 animate-float"
+        className="w-full max-w-lg mx-auto bg-[#0f2437] p-6 sm:p-8 rounded-xl shadow-lg border border-cyan-600 animate-float"
       >
         <label className="block mb-4">
           <span className="text-cyan-300">Name</span>
@@ -51,7 +57,7 @@ const Contact = () => {
             required
             value={formData.name}
             onChange={handleChange}
-            className="mt-1 w-full p-2 rounded bg-gray-800 border border-cyan-600"
+            className="mt-1 w-full p-2 rounded bg-gray-800 border border-cyan-600 outline-none focus:ring-2 focus:ring-cyan-500"
           />
         </label>
 
@@ -63,7 +69,7 @@ const Contact = () => {
             required
             value={formData.email}
             onChange={handleChange}
-            className="mt-1 w-full p-2 rounded bg-gray-800 border border-cyan-600"
+            className="mt-1 w-full p-2 rounded bg-gray-800 border border-cyan-600 outline-none focus:ring-2 focus:ring-cyan-500"
           />
         </label>
 
@@ -75,7 +81,7 @@ const Contact = () => {
             rows="5"
             value={formData.message}
             onChange={handleChange}
-            className="mt-1 w-full p-2 rounded bg-gray-800 border border-cyan-600"
+            className="mt-1 w-full p-2 rounded bg-gray-800 border border-cyan-600 outline-none focus:ring-2 focus:ring-cyan-500"
           />
         </label>
 

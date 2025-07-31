@@ -43,27 +43,27 @@ const TechStack = () => {
         🧰 My Technology Stack
       </h1>
 
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8 justify-items-center">
-        {techStack.map((tech, idx) => (
-          <div
-            key={idx}
-            data-aos="zoom-in"
-            className="group relative transition transform hover:scale-150"
-          >
-            <img
-  src={tech.icon}
-  alt={tech.name}
-  className={`w-18 h-18 md:w-20 md:h-20 rounded-lg shadow-md hover:shadow-cyan-600/70 transition-shadow duration-100 ${
-    idx % 2 === 0 ? "animate-floatUp" : "animate-floatDown"
-  }`}
-  data-tooltip-id={`tooltip-${idx}`}
-  data-tooltip-content={tech.name}
-/>
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 place-items-center">
+  {techStack.map((tech, idx) => (
+    <div
+      key={idx}
+      data-aos="zoom-in"
+      className="group relative hover:scale-110 transition-transform duration-300 ease-in-out"
+    >
+      <img
+        src={tech.icon}
+        alt={tech.name}
+        className={`w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain hover:shadow-cyan-500/50 rounded-lg ${
+          idx % 2 === 0 ? "animate-floatUp" : "animate-floatDown"
+        }`}
+        data-tooltip-id={`tooltip-${idx}`}
+        data-tooltip-content={tech.name}
+      />
+      <Tooltip id={`tooltip-${idx}`} place="top" effect="solid" />
+    </div>
+  ))}
+</div>
 
-            <Tooltip id={`tooltip-${idx}`} place="top" effect="solid" />
-          </div>
-        ))}
-      </div>
     </div>
   );
 };
