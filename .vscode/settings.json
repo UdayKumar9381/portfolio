@@ -1,0 +1,5 @@
+{
+    "editor.suggest.shareSuggestSelections": false,
+    "editor.inlineSuggest.suppressSuggestions": true,
+    "debug.console.acceptSuggestionOnEnter": "on"
+}

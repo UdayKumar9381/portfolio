@@ -1,0 +1,250 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cosmic Color Palette with fallbacks */
+:root {
+  --cosmic-deep: #020a13;
+  --cosmic-neon: #00ffff;
+  --cosmic-purple: #9d00ff;
+  --cosmic-pink: #ff00aa;
+  --cosmic-blue: #0066ff;
+}
+
+/* Base Styles */
+body {
+  @apply bg-[var(--cosmic-deep)] text-white overflow-x-hidden;
+  min-height: 100vh;
+  font-smooth: antialiased;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+  0%, 100% { text-shadow: 0 0 8px var(--cosmic-neon), 0 0 16px var(--cosmic-neon); }
+  50% { text-shadow: 0 0 12px var(--cosmic-neon), 0 0 24px var(--cosmic-neon); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes float-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes flap {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(10deg); }
+}
+
+@keyframes cosmic-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
+@keyframes particle-sparkle {
+  0% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0.3; transform: scale(0.8); }
+}
+
+@keyframes warp-tunnel {
+  0% { transform: rotate(0deg) scale(1); }
+  100% { transform: rotate(360deg) scale(1.2); }
+}
+
+@keyframes connection-flicker {
+  0%, 100% { opacity: 0.3; stroke-width: 1px; }
+  50% { opacity: 0.8; stroke-width: 1.5px; }
+}
+
+/* Animation Classes */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.animate-blink {
+  animation: blink 1s step-start infinite;
+}
+
+.glow-effect {
+  animation: float-glow 2s ease-in-out infinite;
+}
+
+.butterfly-flap {
+  animation: flap 0.6s ease-in-out infinite alternate;
+}
+
+.animate-cosmic-pulse {
+  animation: cosmic-pulse 4s ease-in-out infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce 2s infinite;
+}
+
+.particle-sparkle {
+  animation: particle-sparkle 2s ease-in-out infinite;
+}
+
+.warp-tunnel {
+  animation: warp-tunnel 20s linear infinite;
+}
+
+.connection-line {
+  animation: connection-flicker 3s ease-in-out infinite;
+  stroke: url(#cosmicGradient);
+}
+
+/* Gradient Definitions */
+.cosmic-gradient {
+  background: linear-gradient(135deg, var(--cosmic-purple), var(--cosmic-blue));
+  background-attachment: fixed;
+}
+
+/* Text Effects */
+.text-cosmic {
+  background: linear-gradient(90deg, var(--cosmic-neon), var(--cosmic-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Button Styles */
+.btn-cosmic {
+  @apply relative overflow-hidden px-6 py-3 rounded-lg font-bold transition-all duration-300;
+  background: linear-gradient(135deg, var(--cosmic-purple), var(--cosmic-blue));
+  box-shadow: 0 0 10px rgba(157, 0, 255, 0.5);
+}
+
+.btn-cosmic::before {
+  content: '';
+  @apply absolute inset-0 bg-[var(--cosmic-neon)] opacity-0 transition-opacity duration-300;
+  z-index: -1;
+}
+
+.btn-cosmic:hover::before {
+  opacity: 0.2;
+}
+
+/* Input Fields */
+.input-cosmic {
+  @apply bg-transparent border-b-2 border-[var(--cosmic-neon)] focus:outline-none focus:border-[var(--cosmic-purple)] transition-colors duration-300;
+  caret-color: var(--cosmic-neon);
+}
+
+.input-cosmic::placeholder {
+  @apply text-gray-400;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cosmic-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cosmic-neon);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cosmic-purple);
+}
+
+/* Hover Effects */
+.hover-glow {
+  @apply transition-all duration-300;
+}
+
+.hover-glow:hover {
+  filter: drop-shadow(0 0 8px var(--cosmic-neon));
+  transform: translateY(-2px);
+}
+
+/* SVG Filters (hidden but available) */
+.svg-filters {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .animate-float {
+    animation-duration: 4s;
+  }
+  
+  .animate-glow {
+    animation-duration: 2.5s;
+  }
+  
+  .btn-cosmic {
+    @apply px-4 py-2 text-sm;
+  }
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  
+  .text-stroke {
+    -webkit-text-stroke: 1px var(--cosmic-neon);
+    text-stroke: 1px var(--cosmic-neon);
+    color: transparent;
+  }
+  
+  .text-shadow-cosmic {
+    text-shadow: 0 0 8px var(--cosmic-neon);
+  }
+  
+  .clip-path-circle {
+    clip-path: circle(50% at 50% 50%);
+  }
+}
+
+/* Fix for backdrop blur in Firefox */
+@supports (-moz-appearance: none) {
+  .backdrop-blur {
+    background-color: rgba(2, 10, 19, 0.8);
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+}
