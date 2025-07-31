@@ -37,6 +37,9 @@ This portfolio showcases my **skills**, **projects**, **education**, **internshi
 
 ## 📁 Project Structure
 
+Portfolio Project
+This is a personal portfolio website showcasing my skills, projects, education, and achievements. It features a modern frontend built with Vite + React and a backend powered by Flask for handling contact form submissions. The project integrates React-Three-Fiber for 3D animations and uses Tailwind CSS for styling.
+Project Structure
 portfolio/                        # 🔥 Main Project Root Folder
 │
 ├── server/                       # 🧠 Flask Backend (Contact API)
@@ -50,9 +53,17 @@ portfolio/                        # 🔥 Main Project Root Folder
 ├── client/                       # 🎨 Frontend (Vite + React)
 │   ├── public/
 │   │   ├── badges/
+│   │   │   ├── e-learning/
+│   │   │   ├── aws/
+│   │   │   └── ...
 │   │   ├── tech/                 # 🛠 Tech stack icons
+│   │   │   ├── html5.svg
+│   │   │   ├── css3.svg
+│   │   │   └── ...
 │   │   ├── icons/                # Social media and other UI icons
 │   │   ├── models/
+│   │   │   └── Animated.glb
+│   │   ├── 3d avatar.glb
 │   │   ├── vite.svg
 │   │   ├── screenshots/
 │   │   └── certificates/
@@ -99,7 +110,6 @@ portfolio/                        # 🔥 Main Project Root Folder
 ├── .gitignore                    # Git ignore rules for root
 ├── README.md                     # 📖 Project documentation
 └── package.json                  # Frontend scripts and dependencies
-
 
 ---
 
