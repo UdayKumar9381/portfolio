@@ -7,7 +7,7 @@ This portfolio showcases my **skills**, **projects**, **education**, **internshi
 
 ## 📸 Demo
 
-**Frontend Live**: [https://udaykumarportfolio.vercel.app]((https://uday-brown.vercel.app/))  
+**Frontend Live**: [https://udaykumarportfolio.vercel.app](https://uday-brown.vercel.app/))  
 **Backend API (Render)**: [https://portfolio-uf9x.onrender.com](https://portfolio-uf9x.onrender.com)
 
 ---
